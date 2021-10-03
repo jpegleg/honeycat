@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 while true; do
-    nc -lvnp "$1" | echo "$(date +%Y%m%d%H%M%S%N) $(ps auxwww | base64 | tr -d '\n') $(ss -tanu | base64 | tr -d '\n') honeycat triggered" >> /var/log/honeycat.log
+    nc -lvnp "$1" | echo "$(date +%Y%m%d%H%M%S%N) $(ps auxwww | base64 | tr -d '\n') $(ss -tulpan | base64 | tr -d '\n') honeycat triggered" >> /var/log/honeycat.log
 done
